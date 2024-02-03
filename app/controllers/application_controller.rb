@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
+    # [:name]のままだとEmail can't be blankが出る
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
   end
 end

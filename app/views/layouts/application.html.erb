@@ -12,7 +12,11 @@
   <body>
     <%= render 'layouts/header' %>
       <main>
-        <p id="notice"><%= notice %></p>
+        <p id="notice">
+          <% flash.each do |message_type, message| %>
+            <%= message %>
+          <% end %>
+        </p>
         <%= yield %>
       </main>
     <%= render 'layouts/footer' %>
